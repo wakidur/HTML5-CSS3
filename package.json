@@ -5,6 +5,6 @@
     "author": "wakidur",
     "contributors": [],
     "dependencies": {
-    	"jquery" : "",
+    	"jquery" : "jquery.js"
     }
 }
