@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <!--step - 1-->
+        <form action="processform.php" method="POST">
+            <label> Name: 
+                <input name="fullName" type="text">
+            </label>
+            <input type="submit" value="submit">
+        </form>
+        <!--step - 2-->
+        <form action="mailto:wakidur@yahoo.com" method="POST" enctype="text/plain">
+            <label> Name: 
+                <input name="fullName" type="text">
+            </label>
+            <input type="submit" value="submit">
+        </form>
+        
+        <!--step - 3-->
+        <form action="processform.php" method="POST" enctype="text/plain">
+            <!--required attribute--> 
+            <label for="nameField"> Name: </label>
+            <input name="nameField" id="nameField" type="text" required>
+            <button type="submit">send</button>
+        </form>
+        
+        
+    </body>
+</html>
