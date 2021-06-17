@@ -1,0 +1,50 @@
+// up
+@mixin breakpoints-up-800() {
+  @media all and (min-width: $breakpoint-800) {
+    @content;
+  }
+}
+
+@mixin breakpoints-up-600() {
+  @media all and (min-width: $breakpoint-600) {
+    @content;
+  }
+}
+
+// Down
+@mixin breakpoints-800() {
+  @media all and (max-width: $breakpoint-800) {
+    @content;
+  }
+}
+
+@mixin breakpoints-600() {
+  @media all and (max-width: $breakpoint-600) {
+    @content;
+  }
+}
+// Prefixing Flexbox
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}

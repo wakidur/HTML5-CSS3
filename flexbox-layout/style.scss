@@ -1,0 +1,133 @@
+@import './styles/index.scss';
+// Flexbox 1
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  .flex-item {
+    background-color: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+  }
+}
+
+// Flexbox-2
+.navigation {
+  @include flexbox();
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  margin: 0;
+  list-style: none;
+  background-color: deepskyblue;
+
+  a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    &:hover {
+      background-color: #1565c0;
+    }
+    @include breakpoints-600() {
+      padding: 10px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @include breakpoints-800() {
+    justify-content: space-around;
+  }
+
+  @include breakpoints-600() {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+
+    li:last-of-type {
+      a {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Flexbox-3
+.wrapper {
+  @include flexbox();
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+
+  & > * {
+    padding: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    // flex: 1 100%;
+  }
+
+  .header {
+    background-color: tomato;
+  }
+  .contain {
+    text-align: left;
+    background-color: deepskyblue;
+  }
+  .aside-left {
+    background-color: gold;
+  }
+  .aside-right {
+    background-color: hotpink;
+  }
+  .footer {
+    background-color: lightgreen;
+  }
+
+  @include breakpoints-up-600() {
+    .aside {
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 0;
+      // flex: 1 0 0;
+    }
+  }
+
+  @include breakpoints-up-800() {
+    .contain {
+      flex-grow: 3;
+      flex-shrink: 1;
+      flex-basis: 0px;
+      // flex: 3 0px;
+    }
+    .aside-left {
+      @include order(1);
+    }
+    .contain {
+      @include order(2);
+    }
+    .aside-right {
+      @include order(3);
+    }
+    .footer {
+      @include order(4);
+    }
+  }
+}
