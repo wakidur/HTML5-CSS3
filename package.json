@@ -1,10 +1,8 @@
 {
     "name": "HTML5-CSS3",
     "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
+    "keywords": ["HTML5", "CSS3"],
     "author": "wakidur",
     "contributors": [],
-    "dependencies": {
-    	"jquery" : "",
-    }
+    "dependencies": {}
 }
