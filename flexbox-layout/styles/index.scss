@@ -1,0 +1,16 @@
+// 
+/**
+* ITCSS: Scalable and Maintainable CSS Architecture
+* https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+*
+* Settings .............. Global variables, config switches.
+* Tools ................. Default mixing and function
+* Generic ............... Ground-zero style (Normalize.css,reset, box-sizing)
+* Basc .................. Unclassed HTML elements (type selectors)
+* Objects ............... Cosmetic-free desing patterns.
+* Components ............ Designed components, chunks of UI
+* Trumps ................ Helpers and overrides.
+*/
+
+@import './settings/index';
+@import './tools/index'

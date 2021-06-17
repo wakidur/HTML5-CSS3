@@ -1,0 +1,193 @@
+/**
+* ITCSS: Scalable and Maintainable CSS Architecture
+* https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+*
+* Settings .............. Global variables, config switches.
+* Tools ................. Default mixing and function
+* Generic ............... Ground-zero style (Normalize.css,reset, box-sizing)
+* Basc .................. Unclassed HTML elements (type selectors)
+* Objects ............... Cosmetic-free desing patterns.
+* Components ............ Designed components, chunks of UI
+* Trumps ................ Helpers and overrides.
+*/
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-container .flex-item {
+  background-color: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0;
+  list-style: none;
+  background-color: deepskyblue;
+}
+
+.navigation a {
+  display: block;
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  background-color: #1565c0;
+}
+
+@media all and (max-width: 600px) {
+  .navigation a {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0;
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.wrapper .header {
+  background-color: tomato;
+}
+
+.wrapper .contain {
+  text-align: left;
+  background-color: deepskyblue;
+}
+
+.wrapper .aside-left {
+  background-color: gold;
+}
+
+.wrapper .aside-right {
+  background-color: hotpink;
+}
+
+.wrapper .footer {
+  background-color: lightgreen;
+}
+
+@media all and (min-width: 600px) {
+  .wrapper .aside {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .wrapper .contain {
+    -webkit-box-flex: 3;
+        -ms-flex-positive: 3;
+            flex-grow: 3;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -ms-flex-preferred-size: 0px;
+        flex-basis: 0px;
+  }
+  .wrapper .aside-left {
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .wrapper .contain {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .wrapper .aside-right {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  .wrapper .footer {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+}
+/*# sourceMappingURL=style.css.map */
